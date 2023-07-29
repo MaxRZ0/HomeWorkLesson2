@@ -1,21 +1,17 @@
-coins = int(input("Введите общее коллчество монет: "))
-coin_o = 0
-coin_r = 0
-check = True
+import math
 
-for i in range(coins):
-    coin = int(input(f"Положите моету {i+1} (0 или 1): "))
-    if coin == 0:
-        coin_o += 1
-    elif coin == 1:
-        coin_r += 1
-    else:
-        print("Неверное значение")
-        check = False
-        break
+summ = int(input("Введите сумму чисел х и у: "))
+comp = int(input("Введите произведение чисел х и у: "))
+discr_0 = True
 
-if check == True:
-    if coin_r > coin_o:
-        print(f"Колличество монет, необходимых перевернуть {coin_o}")
-    else:
-        print(f"Колличество монет, необходимых перевернуть {coin_r}")
+discr = (summ**2) - ((4 * -1) * -comp)
+
+if discr < 0:
+    discr_0 = False
+
+if discr_0:
+    x = (-summ + math.sqrt(discr)) / 2 * -1
+    y = (-summ - math.sqrt(discr)) / 2 * -1
+    print(f"x={int(x)}, a y={int(y)}")
+else:
+    print("Невозможно вычислить х и у")
