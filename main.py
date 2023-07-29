@@ -7,6 +7,6 @@ array1 = []
 for i in range(n):
     if 2**i > n:
         break
-    array1.append(2**i)
+    array1.append(2 ** i)
 
 print(*array1, sep=', ')
